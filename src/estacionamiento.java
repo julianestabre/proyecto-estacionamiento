@@ -25,76 +25,76 @@ public class estacionamiento {
 
             patente = teclado.nextLine();
 
-            if(!patente.equalsIgnoreCase("fin")){
-            System.out.println("Ingrese el tipo de servicio");
-            System.out.println("1 -- POR HORA");
-            System.out.println("2 -- MEDIA JORNADA (5 horas)");
-            System.out.println("3 -- JORNADA COMPLETA(10 horas)");
+            if (!patente.equalsIgnoreCase("fin")) {
+                System.out.println("Ingrese el tipo de servicio");
+                System.out.println("1 -- POR HORA");
+                System.out.println("2 -- MEDIA JORNADA (5 horas)");
+                System.out.println("3 -- JORNADA COMPLETA(10 horas)");
 
-            teclado = new Scanner(System.in);
-            tipoServicio = teclado.nextInt();
+                teclado = new Scanner(System.in);
+                tipoServicio = teclado.nextInt();
 
-            if (tipoServicio <= 0 || tipoServicio > 3) {
+                if (tipoServicio <= 0 || tipoServicio > 3) {
 
-                System.out.println("No ingresó un tipo de servicio correcto");
-
-            } else {
-
-                /*
-                 * LOS TIPOS DE ESTACIONAMIENTO DISPONIBLES SON 3:
-                 * 
-                 * - POR HORA (Valor de 3 usd por hora)
-                 * - MEDIA JORNADA (Valor de 15 usd y posee 5% de descuento)
-                 * - JORNADA COMPLETA (Valor de 30 usd y posee 10% de descuento)
-                 */
-
-                if (tipoServicio == 1) {
-
-                    System.out.println("Ingrese la cantidad de horas que desea estacionar");
-                    cantHoras = teclado.nextInt();
-
-                    total = cantHoras * 3;
-                    System.out.println("El total de su estacionamiento es de: " + total);
-
-                    cont1 = cont1 + 1;
-                    totalDia = totalDia + total;
+                    System.out.println("No ingresó un tipo de servicio correcto");
 
                 } else {
 
-                    if (tipoServicio == 2) {
-                        System.out.println(
-                                "El servicio de MEDIA JORNADA corresponde a 5 horas y posee un descuento del 5%");
+                    /*
+                     * LOS TIPOS DE ESTACIONAMIENTO DISPONIBLES SON 3:
+                     * 
+                     * - POR HORA (Valor de 3 usd por hora)
+                     * - MEDIA JORNADA (Valor de 15 usd y posee 5% de descuento)
+                     * - JORNADA COMPLETA (Valor de 30 usd y posee 10% de descuento)
+                     */
 
-                        total = 15 - (15 * 0.05);
+                    if (tipoServicio == 1) {
 
+                        System.out.println("Ingrese la cantidad de horas que desea estacionar");
+                        cantHoras = teclado.nextInt();
+
+                        total = cantHoras * 3;
                         System.out.println("El total de su estacionamiento es de: " + total);
 
-                        cont2 = cont2 + 1;
+                        cont1 = cont1 + 1;
                         totalDia = totalDia + total;
 
+                    } else {
+
+                        if (tipoServicio == 2) {
+                            System.out.println(
+                                    "El servicio de MEDIA JORNADA corresponde a 5 horas y posee un descuento del 5%");
+
+                            total = 15 - (15 * 0.05);
+
+                            System.out.println("El total de su estacionamiento es de: " + total);
+
+                            cont2 = cont2 + 1;
+                            totalDia = totalDia + total;
+
+                        }
+
+                        else {
+
+                            System.out.println(
+                                    "El servicio de JORNADA COMPLETA corresponde a 10 horas y posee un descuento del 10%");
+
+                            total = 30 - (30 * 0.10);
+
+                            System.out.println("El total de su estacionamiento es de: " + total);
+
+                            cont3 = cont3 + 1;
+                            totalDia = totalDia + total;
+                        }
                     }
 
-                    else {
+                    System.out.println("MUCHAS GRACIAS POR SU COMPRA");
+                    System.out.println("------------------------------------------------");
 
-                        System.out.println(
-                                "El servicio de JORNADA COMPLETA corresponde a 10 horas y posee un descuento del 10%");
-
-                        total = 30 - (30 * 0.10);
-
-                        System.out.println("El total de su estacionamiento es de: " + total);
-
-                        cont3 = cont3 + 1;
-                        totalDia = totalDia + total;
-                    }
                 }
 
+                teclado = new Scanner(System.in);
             }
-
-            System.out.println("MUCHAS GRACIAS POR SU COMPRA");
-            System.out.println("------------------------------------------------");
-
-            teclado = new Scanner(System.in);
-        }
         }
 
         System.out.println("===============================");
